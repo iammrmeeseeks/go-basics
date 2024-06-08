@@ -25,4 +25,15 @@ func main() {
 	m["key2"] = 2
 
 	fmt.Println("map m: ", m)
+
+	fmt.Println("example of structs")
+
+	type Person struct {
+		Name string
+		Age  int
+	}
+
+	p := Person{Name: "John", Age: 30}
+
+	fmt.Println("struct p: ", p)
 }
