@@ -16,5 +16,13 @@ func main() {
 
 	slice := append(arr[:], 4)
 
-	fmt.Println(" slice: ", slice)
+	fmt.Println("slice: ", slice)
+
+	fmt.Println("example of maps")
+
+	m := make(map[string]int)
+	m["key1"] = 1
+	m["key2"] = 2
+
+	fmt.Println("map m: ", m)
 }
