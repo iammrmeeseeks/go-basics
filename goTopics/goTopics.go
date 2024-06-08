@@ -4,6 +4,16 @@ import (
 	"fmt"
 )
 
+type Rectangle struct {
+	Width, Height int
+}
+
+// In Go, type definitions and method definitions should be at the package level,
+// not inside another function.
+func (r Rectangle) Area() int {
+	return r.Width * r.Height
+}
+
 func main() {
 	fmt.Println("Go Topics")
 	fmt.Println("example of arrays and slices")
@@ -36,4 +46,9 @@ func main() {
 	p := Person{Name: "John", Age: 30}
 
 	fmt.Println("struct p: ", p)
+
+	fmt.Println("example of methods and interfaces")
+
+	r1 := Rectangle{Width: 40, Height: 20}
+	fmt.Println("Area of rectangle r1: ", r1.Area())
 }
