@@ -11,4 +11,10 @@ func main() {
 	var arr [3]int = [3]int{1, 2, 3}
 
 	fmt.Println("array arr: ", arr)
+
+	fmt.Println("example of slices")
+
+	slice := append(arr[:], 4)
+
+	fmt.Println(" slice: ", slice)
 }
