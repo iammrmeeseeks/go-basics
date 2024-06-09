@@ -84,4 +84,12 @@ func main() {
 
 	fmt.Println("Dog sound: ", MakeSound(d))
 	fmt.Println("Cat sound: ", MakeSound(c))
+
+	fmt.Println("example of pointers")
+	var x int = 10
+	var pointer *int = &x
+
+	fmt.Println("value of x: ", x)
+	fmt.Println("pointer pointer: ", pointer)
+	fmt.Println("value at pointer po: ", *pointer)
 }
