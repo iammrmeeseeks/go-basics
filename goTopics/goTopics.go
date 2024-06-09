@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -37,6 +38,15 @@ func (c Cat) Sound() string {
 
 func MakeSound(a Animal) string {
 	return a.Sound()
+}
+
+// error handling
+func divide(a, b int) (int, error) {
+	if b == 0 {
+		return 0, errors.New("cannot divide by zero")
+	}
+
+	return a / b, nil
 }
 
 func main() {
@@ -92,4 +102,13 @@ func main() {
 	fmt.Println("value of x: ", x)
 	fmt.Println("pointer pointer: ", pointer)
 	fmt.Println("value at pointer po: ", *pointer)
+
+	fmt.Println("example of error handling")
+
+	result, err := divide(10, 0)
+	if err != nil {
+		fmt.Println("error: ", err)
+	} else {
+		fmt.Println("result: ", result)
+	}
 }
