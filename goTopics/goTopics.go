@@ -14,6 +14,31 @@ func (r Rectangle) Area() int {
 	return r.Width * r.Height
 }
 
+// interfaces
+type Animal interface {
+	Sound() string
+}
+
+type Dog struct {
+	Name string
+}
+
+type Cat struct {
+	Name string
+}
+
+func (d Dog) Sound() string {
+	return "Woof"
+}
+
+func (c Cat) Sound() string {
+	return "Meow"
+}
+
+func MakeSound(a Animal) string {
+	return a.Sound()
+}
+
 func main() {
 	fmt.Println("Go Topics")
 	fmt.Println("example of arrays and slices")
@@ -47,8 +72,16 @@ func main() {
 
 	fmt.Println("struct p: ", p)
 
-	fmt.Println("example of methods and interfaces")
+	fmt.Println("example of methods")
 
 	r1 := Rectangle{Width: 40, Height: 20}
 	fmt.Println("Area of rectangle r1: ", r1.Area())
+
+	fmt.Println("example interfaces")
+
+	d := Dog{Name: "Max"}
+	c := Cat{Name: "Whiskers"}
+
+	fmt.Println("Dog sound: ", MakeSound(d))
+	fmt.Println("Cat sound: ", MakeSound(c))
 }
